@@ -22,6 +22,7 @@ public class servidor {
 				String mensaje = lector.readLine();
 				System.out.println("Mensaje recibido: " + mensaje);
 				entrante.close();
+				active = false;
 			}
 		} catch (IOException e){
 			e.printStackTrace();
