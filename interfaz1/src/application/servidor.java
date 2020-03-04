@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class servidor {
 	
-	public static void main(String[] args) {
+	public void socket() {
 		
 		boolean active = true;
 		try {
@@ -20,9 +20,8 @@ public class servidor {
 				
 				BufferedReader lector = new BufferedReader(new InputStreamReader(entrante.getInputStream()));
 				String mensaje = lector.readLine();
-				System.out.println("Mensaje recibido: " + mensaje);
+				System.out.println(mensaje);
 				entrante.close();
-				active = false;
 			}
 		} catch (IOException e){
 			e.printStackTrace();

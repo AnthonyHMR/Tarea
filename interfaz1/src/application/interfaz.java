@@ -22,6 +22,7 @@ public class interfaz extends Application {
 	TextArea taMensajes;
 	TextField tfChat;
 	ListView<String> lstLenguajes;
+	String Guardar1, Guardar2;
 	
 	
 	public static void main(String[] args) {
@@ -40,6 +41,8 @@ public class interfaz extends Application {
 		btnInicio.setTranslateX(13);
 		btnInicio.setTranslateY(2);
 		
+		btnInicio.setOnAction(e -> inicio());
+		
 		btnEnviar = new Button("Enviar");
 		btnEnviar.setMinWidth(20);
 		btnEnviar.setTranslateX(530);
@@ -57,15 +60,18 @@ public class interfaz extends Application {
 		tfChat.setTranslateY(342);
 		
 		lstLenguajes = new ListView<>();
-		lstLenguajes.getItems().addAll("Socket1","Socket2","Socket3");
+		lstLenguajes.getItems().addAll("Socket1","Socket2");
 		lstLenguajes.setTranslateX(0);
 		lstLenguajes.setTranslateY(30);
 		lstLenguajes.setMaxSize(120, 370);
 		lstLenguajes.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>(){
 			@Override
 			public void changed(ObservableValue<? extends String> x,String anterior, String actual){
-				String hola = "Hamborguesa";
-				taMensajes.setText("Yo: " + hola + "\n");
+				if(actual.equals("Socket1")) {
+					taMensajes.setText(Guardar1);
+				}else {
+					taMensajes.setText(Guardar2);
+				}
 			}
 		});
 		
@@ -86,7 +92,12 @@ public class interfaz extends Application {
 			
 		}else{
 			taMensajes.appendText("Me: " + tfChat.getText() + "\n");
+			Guardar1 = taMensajes.getText();
 			tfChat.setText("");
 		}
+	}
+	public void inicio() {
+		servidor iniciar = new servidor();
+		iniciar.socket();
 	}
 }
