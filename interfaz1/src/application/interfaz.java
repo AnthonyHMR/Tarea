@@ -69,6 +69,7 @@ public class interfaz extends Application {
 			public void changed(ObservableValue<? extends String> x,String anterior, String actual){
 				if(actual.equals("Chat")) {
 					taMensajes.setText(save);
+					lblSeleccion.setText("Chat");
 				}else if(actual.equals("Socket1")) {
 					taMensajes.setText(Guardar1);
 					lblSeleccion.setText("Socket1");
@@ -92,6 +93,7 @@ public class interfaz extends Application {
 		miEscenario.show();
 	}
 	public void agregar() {
+		
 		if(tfChat.getText().equals("")){
 			
 		}else{
@@ -103,5 +105,7 @@ public class interfaz extends Application {
 	public void inicio() {
 		servidor iniciar = new servidor();
 		iniciar.socket();
+		save = iniciar.mensaje;
+		taMensajes.appendText(save + "\n");
 	}
 }

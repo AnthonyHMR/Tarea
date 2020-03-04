@@ -8,6 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class servidor {
+	public static String mensaje;
 	
 	public void socket() {
 		
@@ -19,7 +20,7 @@ public class servidor {
 				Socket entrante = serverSocket.accept();
 				
 				BufferedReader lector = new BufferedReader(new InputStreamReader(entrante.getInputStream()));
-				String mensaje = lector.readLine();
+				mensaje = lector.readLine();
 				System.out.println(mensaje);
 				entrante.close();
 			}
@@ -27,5 +28,5 @@ public class servidor {
 			e.printStackTrace();
 		}
 	}
-
+	
 }
