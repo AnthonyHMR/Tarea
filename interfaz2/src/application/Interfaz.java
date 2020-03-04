@@ -69,7 +69,7 @@ public class Interfaz extends Application {
 			
 		}else {
 			taMensajes.setText("Yo: "+tfChat.getText()+"\n");
-			cliente.socket(tfChat.getText());
+			cliente.socket("Socket1: "+tfChat.getText());
 			tfChat.setText("");
 		}
 	}

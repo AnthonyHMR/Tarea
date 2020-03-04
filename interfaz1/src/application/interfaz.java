@@ -22,7 +22,7 @@ public class interfaz extends Application {
 	TextArea taMensajes;
 	TextField tfChat;
 	ListView<String> lstLenguajes;
-	String Guardar1, Guardar2;
+	String Guardar1, Guardar2, save;
 	
 	
 	public static void main(String[] args) {
@@ -32,9 +32,9 @@ public class interfaz extends Application {
 	@Override
 	public void start(Stage miEscenario) {
 		
-		lblSeleccion = new Label("Aun no has seleccionado un lenguaje");
-		lblSeleccion.setTranslateX(300);
-		lblSeleccion.setTranslateY(20);
+		lblSeleccion = new Label("Chat");
+		lblSeleccion.setTranslateX(330);
+		lblSeleccion.setTranslateY(10);
 		
 		btnInicio = new Button("Iniciar Servidor");
 		btnInicio.setMinWidth(40);
@@ -60,17 +60,21 @@ public class interfaz extends Application {
 		tfChat.setTranslateY(342);
 		
 		lstLenguajes = new ListView<>();
-		lstLenguajes.getItems().addAll("Socket1","Socket2");
+		lstLenguajes.getItems().addAll("Chat", "Socket1","Socket2");
 		lstLenguajes.setTranslateX(0);
 		lstLenguajes.setTranslateY(30);
 		lstLenguajes.setMaxSize(120, 370);
 		lstLenguajes.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>(){
 			@Override
 			public void changed(ObservableValue<? extends String> x,String anterior, String actual){
-				if(actual.equals("Socket1")) {
+				if(actual.equals("Chat")) {
+					taMensajes.setText(save);
+				}else if(actual.equals("Socket1")) {
 					taMensajes.setText(Guardar1);
+					lblSeleccion.setText("Socket1");
 				}else {
 					taMensajes.setText(Guardar2);
+					lblSeleccion.setText("Socket2");
 				}
 			}
 		});
