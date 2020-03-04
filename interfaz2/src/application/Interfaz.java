@@ -1,6 +1,8 @@
 package application;
 
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
@@ -42,7 +44,14 @@ public class Interfaz extends Application {
 		btnEnviar.setTranslateX(415);
 		btnEnviar.setTranslateY(330);
 		
-		btnEnviar.setOnAction(e -> enviar());
+		btnEnviar.setOnAction(e -> {
+			try {
+				enviar();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		
 		contenedor = new Pane();
 		contenedor.getChildren().addAll(lblSeleccion, taMensajes, tfChat, btnEnviar);
@@ -54,7 +63,7 @@ public class Interfaz extends Application {
 		miEscenario.getIcons().add(new Image(Interfaz.class.getResourceAsStream("/Imagenes/Cancelar.jpg")));
 		miEscenario.show();
 	}
-	public void enviar() {
+	public void enviar() throws IOException {
 		Client cliente = new Client();
 		if(tfChat.getText().equals("")) {
 			
