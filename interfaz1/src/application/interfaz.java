@@ -24,7 +24,7 @@ public class interfaz extends Application {
 	ListView<String> lstLenguajes;
 	String Guardar1, Guardar2, save;
 	
-	
+	//Ejecuta la interfaz
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
@@ -92,6 +92,7 @@ public class interfaz extends Application {
 		miEscenario.getIcons().add(new Image(interfaz.class.getResourceAsStream("/Imagenes/Cancelar.jpg")));
 		miEscenario.show();
 	}
+	//Agrega los enviajes enviados
 	public void agregar() {
 		
 		if(tfChat.getText().equals("")){
@@ -102,6 +103,7 @@ public class interfaz extends Application {
 			tfChat.setText("");
 		}
 	}
+	//guarda mensajes en el chat
 	public void inicio() {
 		servidor iniciar = new servidor();
 		iniciar.socket();

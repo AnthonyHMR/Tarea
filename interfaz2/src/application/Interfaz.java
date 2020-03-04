@@ -21,6 +21,7 @@ public class Interfaz extends Application {
 	TextField tfChat;
 	Button btnEnviar;
 	
+	//Ejecuta la interfaz
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
@@ -63,6 +64,7 @@ public class Interfaz extends Application {
 		miEscenario.getIcons().add(new Image(Interfaz.class.getResourceAsStream("/Imagenes/Cancelar.jpg")));
 		miEscenario.show();
 	}
+	//Envia el mensaje escrito por el socket
 	public void enviar() throws IOException {
 		Client cliente = new Client();
 		if(tfChat.getText().equals("")) {
