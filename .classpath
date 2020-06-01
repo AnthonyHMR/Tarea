@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="2Cliente/src"/>
+	<classpathentry kind="src" path="hi3/src"/>
+	<classpathentry kind="src" path="HolaMundo2/srcc"/>
+	<classpathentry kind="src" path="interfaz1/src"/>
+	<classpathentry kind="src" path="interfaz2/src"/>
+	<classpathentry kind="src" path="POO/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="interfaz2/bin"/>
+</classpath>
