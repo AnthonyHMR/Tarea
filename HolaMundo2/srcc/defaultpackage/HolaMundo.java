@@ -7,6 +7,7 @@ public class HolaMundo {
 		
 		System.out.println("Numero entero: "+caracter);
 		System.out.println("Cambio");
+		System.out.println("Cambio 2");
 	}
 
 }
